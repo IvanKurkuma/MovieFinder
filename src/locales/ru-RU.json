@@ -1,0 +1,33 @@
+{
+    "headers":{
+        "icon":"MovieFinder",
+        "buttons":{
+            "main":"Главная",
+            "favorites":"Избранное",
+            "history":"История"
+        },
+        "input":"Поиск фильмов"
+    },
+    "main":{
+        "title":"Популярные фильмы",
+        "accordion":{
+            "sort":{
+                "title":"Сортировка",
+                "subtitle":"Сортировать фильмы по:",
+                "options":{
+                    "popular":"Популярность",
+                    "toprated":"Рейтинг (лучшие)",
+                    "nowplaying":"Сейчас в Прокате"
+                }
+            },
+            "language":{
+                "title":"Язык",
+                "subtitle":"Выберите язык",
+                "options":{
+                    "en-US":"Английский",
+                    "ru-RU":"Русский (сейчас)"
+                }
+            }
+        }
+    }
+}

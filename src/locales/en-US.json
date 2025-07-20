@@ -1,0 +1,33 @@
+{
+    "headers":{
+        "icon":"MovieFinder",
+        "buttons":{
+            "main":"Main",
+            "favorites":"Favorites",
+            "history":"History"
+        },
+        "input":"Search Film"
+    },
+    "main":{
+        "title":"Popular Movies",
+        "accordion":{
+            "sort":{
+                "title":"Sort",
+                "subtitle":"Sort Results By",
+                "options":{
+                    "popular":"Popular",
+                    "toprated":"Top Rated",
+                    "nowplaying":"Now Playing"
+                }
+            },
+            "language":{
+                "title":"Language",
+                "subtitle":"Choise The Language",
+                "options":{
+                    "en-US":"English (now)",
+                    "ru-RU":"Russian"
+                }
+            }
+        }
+    }
+}

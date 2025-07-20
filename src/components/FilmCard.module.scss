@@ -1,0 +1,161 @@
+.filmList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px; 
+  padding-left: 60px;
+
+  h3{
+    margin-left: 10px;
+    font-weight: 800;
+    margin-top: 9px;
+    margin-bottom: 9px;
+  }
+
+  .datSpan{
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+}
+
+.filmCard{
+    position: relative;
+    width: 200px;
+    height: 460px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--box-shadow);
+    transition: all .4s;
+    
+    overflow-y: scroll; /* или auto */
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    .filmCard::-webkit-scrollbar {
+      display: none;
+    }
+
+    .cardInner{
+      height: 100%;
+
+      .cardFront{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .cardBack{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        div{
+          padding: 3px;
+        }
+      }
+
+
+
+      
+    }
+
+    .favoriteButton{
+        position: absolute;
+        top:10px;
+        right: 10px;
+        opacity: 0;
+        transition: all .4s;
+        width: auto;
+        height: auto;
+    }
+
+    &:hover{
+        box-shadow: var(--box-shadow-hover);
+        cursor: pointer;
+
+        .favoriteButton{
+            opacity: 1;
+        }
+    }
+
+    img{
+        border-top-left-radius:20px ;
+        border-top-right-radius:20px ;
+    }
+
+    h3{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+}
+
+// .flipped{
+
+//   .cardFront{
+//     visibility: hidden;
+//   }
+// }
+
+
+
+// .filmCard {
+//   position: relative;
+//   perspective: 1000px;
+//   height: 100%;
+//   cursor: pointer;
+// }
+
+// .cardInner {
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+//   transition: transform 0.6s;
+//   transform-style: preserve-3d;
+// }
+
+// .filmCard.flipped .cardInner {
+//   transform: rotateY(180deg);
+// }
+
+// .cardFront, .cardBack {
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   backface-visibility: hidden;
+//   border-radius: 8px;
+//   overflow: hidden;
+//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+// }
+
+// .cardBack {
+//   background-color: #f5f5f5;
+//   padding: 15px;
+//   transform: rotateY(180deg);
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .cardBack h3 {
+//   margin-bottom: 10px;
+// }
+
+// .cardBack p {
+//   flex-grow: 1;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   display: -webkit-box;
+//   -webkit-line-clamp: 5;
+//   -webkit-box-orient: vertical;
+// }
+
+// .backFooter {
+//   margin-top: auto;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// }

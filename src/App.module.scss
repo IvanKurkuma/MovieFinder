@@ -1,0 +1,50 @@
+html{
+    overflow-y: scroll ;
+}
+
+html[data-theme="dark"]{
+    --bg-color: rgba(0, 0, 0, 0.904);
+    --txt-color: rgb(152, 152, 152);
+    --bg-search: rgb(29, 29, 29);
+    --bg-button-theme: gray;
+    --bg-head-color: rgba(0, 0, 0, 0.904);
+    --box-shadow: 0 4px 16px rgba(255, 252, 252, 0.136);
+    --box-shadow-hover: 2px 8px 16px rgba(255, 252, 252, 0.304);
+}
+
+html[data-theme="light"]{
+    --bg-color: rgba(255, 255, 255, 0.962);
+    --txt-color: rgb(33, 33, 33);
+    --bg-search: rgb(222, 222, 222);
+    --bg-button-theme: rgb(208, 208, 208);
+    --bg-head-color: rgba(0, 0, 0, 0.904);
+    --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.216);
+    --box-shadow-hover: 2px 8px 16px rgba(0, 0, 0, 0.373);
+
+}
+
+body{
+    margin: 0;
+    transition: all .2s;
+    background:var(--bg-color);
+    color:var(--txt-color);
+    font-family: 'Open Sans';
+}
+
+.app{
+    display: grid;
+    grid-template-rows: 70px 1fr 50px;
+    min-height: 100vh;
+
+    
+}
+
+header{
+    background: var(--bg-head-color);
+    will-change: transform; /* Оптимизация для браузера */
+    contain: strict; /* Изолирует изменения */
+}
+
+// footer{
+//     background: var(--bg-head-color);
+// }
