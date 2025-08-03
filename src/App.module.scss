@@ -41,10 +41,8 @@ body{
 
 header{
     background: var(--bg-head-color);
-    will-change: transform; /* Оптимизация для браузера */
-    contain: strict; /* Изолирует изменения */
+    will-change: transform; 
+    contain: strict; 
 }
 
-// footer{
-//     background: var(--bg-head-color);
-// }
+
