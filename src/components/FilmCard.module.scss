@@ -73,6 +73,10 @@
         height: auto;
     }
 
+    .allfav{
+      opacity: 1;
+    }
+
     &:hover{
         box-shadow: var(--box-shadow-hover);
         cursor: pointer;
@@ -80,11 +84,16 @@
         .favoriteButton{
             opacity: 1;
         }
+
+        img{
+          transform: scale(1.1);
+        }
     }
 
     img{
         border-top-left-radius:20px ;
         border-top-right-radius:20px ;
+        transition: all .4s;
     }
 
     h3{

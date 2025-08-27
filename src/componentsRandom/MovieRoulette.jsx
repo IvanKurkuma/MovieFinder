@@ -1,29 +1,8 @@
-// import React, {useState, useEffect} from "react";
-// import { getRandom } from "../hooks/useRandom";
-// import { useFavorites } from "../contexts/useFavorite";
-// import styles from './Randomiser.module.scss'
-
-// export default function Randomiser (){
-    
-//     return (
-//         <div className={styles.conteinerRandomiser}>
-//             <div>
-//                 Лист фильмов
-//             </div>
-//             <nav>
-//                 кнопки все
-//             </nav>
-//         </div>
-//     )
-// }
-
-
-
-
 
 import React, { useState, useEffect, useRef } from 'react';
 import { getRandom } from '../hooks/useRandom';
 import './MovieRoulette.css';
+import {useTranslate} from "../hooks/useTranslate"
 
 const MovieRoulette = ({ movies }) => {
   const [highlightedIndex, setHighlightedIndex] = useState(null);
@@ -32,6 +11,7 @@ const MovieRoulette = ({ movies }) => {
   const [duration, setDuration] = useState(5000)
   const intervalRef = useRef(null);
   const startTimeRef = useRef(null);
+  const {t} = useTranslate();
 
   
 
@@ -84,13 +64,13 @@ const MovieRoulette = ({ movies }) => {
     <div className="movie-roulette">
       <div className="controls">
         <button onClick={startSpinning} disabled={isSpinning || movies.length === 0}>
-          {isSpinning ? 'Крутится...' : 'Крутить рулетку'}
+          {isSpinning ? t('history.controls.spins') : t('history.controls.spin')}
         </button>
         <button onClick={reset} disabled={isSpinning}>
-          Сбросить
+          {t('history.controls.reset')}
         </button>
         <div className="duration-control">
-          <label>Длительность (мс):</label>
+          <label>{t('history.controls.duration')}</label>
           <input 
             type="number" 
             step='1000'
@@ -99,9 +79,11 @@ const MovieRoulette = ({ movies }) => {
             disabled={isSpinning}
           />
         </div>
-        {!isSpinning||<button className='button-reset' onClick={clearInterval()}>Отмена</button>}
+        {!isSpinning||<button className='button-reset' onClick={clearInterval()}>{t('history.controls.cancel')}</button>}
       </div>
 
+
+      {movies.length===0?<h1>{t('history.empty')}</h1>:
       <div className="movies-container">
         {movies.map((movie, index) => (
           <div 
@@ -111,14 +93,14 @@ const MovieRoulette = ({ movies }) => {
             <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} 
                 alt={movie.title}  />
             <h3>{movie.title}</h3>
-            {winner === movie && <div className="winner-label">ПОБЕДИТЕЛЬ!</div>}
+            {winner === movie && <div className="winner-label">{t('history.winner')}</div>}
           </div>
         ))}
-      </div>
+      </div>}
 
       {winner && (
         <div className="winner-announcement">
-          <h2>Выбран фильм: {winner.title}</h2>
+          <h2>{t('history.final')} {winner.title}</h2>
         </div>
       )}
     </div>

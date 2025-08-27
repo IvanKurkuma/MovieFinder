@@ -64,7 +64,7 @@ export default function FilmCard({films}){
                   e.stopPropagation();
                   toggleFavorites(film);
                 }} 
-                className={styles.favoriteButton}
+                className={isFavorites(film)?`${styles.favoriteButton} ${styles.allfav}`: `${styles.favoriteButton}`}
               >
                 {isFavorites(film) ? <FavoriteIcon sx={{ color: '#ff6d75' }}/> : <FavoriteBorderIcon sx={{ color: '#ffb3b8' }}/>}
               </div>

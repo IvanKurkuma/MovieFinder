@@ -4,12 +4,13 @@
         "buttons":{
             "main":"Main",
             "favorites":"Favorites",
-            "history":"History"
+            "history":"Randomizer"
         },
         "input":"Search Film"
     },
     "main":{
         "title":"Popular Movies",
+        "error": "Please turn on the VPN.",
         "accordion":{
             "sort":{
                 "title":"Sort",
@@ -29,5 +30,22 @@
                 }
             }
         }
+    },
+    "favorites":{
+        "title":"Favorites Movie",
+        "empty":"You have not favorites movie"
+    },
+    "history":{
+        "title": "Movie Randomiser",
+        "controls": {
+            "spin":"Spin the roulette",
+            "spins": "Spins...",
+            "reset": "Reset",
+            "duration": "Duration (ms)",
+            "cancel": "Cancel"
+        },
+        "empty": "Please add at least two movie in \"Favorites\"",
+        "winner": "WINNER!",
+        "final": "Film Selected:"
     }
 }

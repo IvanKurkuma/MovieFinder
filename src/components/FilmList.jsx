@@ -4,6 +4,7 @@ import styles from './FilmList.module.scss'
 import FilmCard from './FilmCard'
 import SceletonList from "./SkeletonList";
 import { useTheme } from "../contexts/ThemeContext";
+import { useTranslate } from "../hooks/useTranslate";
 
 function FilmList({ sort }) { 
     const API_KEY = import.meta.env.VITE_API_KEY;
@@ -14,6 +15,8 @@ function FilmList({ sort }) {
     const loaderRef = useRef(null);
     const [isFirstLoad, setIsFirstLoad] = useState(true);
     const {lang} = useTheme()
+    const {t} = useTranslate()
+
     
     useEffect(() => {
         setFilms([]);
@@ -83,7 +86,7 @@ function FilmList({ sort }) {
     }, [isLoading, isFirstLoad]);
     
     if (isLoading && films.length === 0) return <SceletonList />;
-    if (error && films.length === 0) return <div>Error: {error}</div>;
+    if (error && films.length === 0) return <div className={styles.Error}>{t('main.error')}</div>;
     
     return (
         <>
